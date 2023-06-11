@@ -26,6 +26,12 @@ footer {
   cursor: pointer;
 }
 
+.footer-icons__desc {
+  margin-top: 5px;
+  font-weight: 100;
+  transform: scale(0.8);
+}
+
 @keyframes icons-float {
   0% {
     transform: translateY(0px);
@@ -47,10 +53,4 @@ footer {
 
 .footer-icons:hover .footer-icons__img {
   animation: 2s icons-float;
-}
-
-.footer-icons__desc {
-  margin-top: 5px;
-  font-weight: 100;
-  transform: scale(0.8);
 }
