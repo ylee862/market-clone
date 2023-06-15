@@ -7,8 +7,8 @@ const calcTime = (timestamp) => {
 
   if (hour > 0) return `${hour}시간 전`;
   else if (minute > 0) return `${minute}분 전`;
-  else if (second >= 0) return `${second}초 전`;
-  else "방금 전";
+  else if (second > 0) return `${second}초 전`;
+  else return "방금 전";
 };
 
 const renderData = (data) => {
@@ -54,7 +54,17 @@ const renderData = (data) => {
 };
 
 const fetchList = async () => {
-  const res = await fetch("/items");
+  const accessToken = window.localStorage.getItem("token");
+  const res = await fetch("/items", {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+  if (res.status === 401) {
+    alert("login needed");
+    window.location.pathname = "/login.html";
+    return;
+  }
   const data = await res.json();
   renderData(data);
 };
