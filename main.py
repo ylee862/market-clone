@@ -73,7 +73,7 @@ async def create_item(image:UploadFile,
     image_bytes = await image.read()
     cur.execute(f"""
                 INSERT INTO items (title, image, price, description, place, insertAt)
-                VALUES('{title}','{image_bytes.hex()}', '{price}','{description}','{place}', '{insertAt}')
+                VALUES('{title}','{image_bytes.hex()}', {price},'{description}','{place}', '{insertAt}')
                 """)
     con.commit()
     return '200'
