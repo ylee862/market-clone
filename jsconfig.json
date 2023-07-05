@@ -3,7 +3,7 @@
     "moduleResolution": "bundler",
     "target": "ESNext",
     "module": "ESNext",
-    /**
+    /**npm install -g firebase-tools
      * svelte-preprocess cannot figure out whether you have
      * a value or a type, so tell TypeScript to enforce using
      * `import type` instead of `import` for Types.
@@ -28,5 +28,5 @@
    * Use global.d.ts instead of compilerOptions.types
    * to avoid limiting type declarations.
    */
-  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte"]
+  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.svelte", "firebase.js"]
 }
